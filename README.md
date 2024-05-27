@@ -1,108 +1,133 @@
-# Algoritmos Geneticos
-Repositorio da matéria Rede Neurais e Algoritmos genéticos do 3° Semestre do Bacharelado em Ciência e Tecnologia - ILUM
+# Equipe
+*DreamCoders* - Samuel Soares de Araújo e Eric Leandro Lima Mendoça.
 
-## Redes Neurais
+# INTRODUÇÃO
+Repositório do Projeto Final de Redes Neurais da disciplina de *Redes Neurais e Algoritimos Genéticos*. A disciplina faz parte da grade curricular do 3º semestre da ILUM - Escola de Ciência, sendo administrada pelo Professor Daniel Cassar. 
 
-### MN2
-Para realizar esta tarefa, foram criadas duas classes principais em Python: Elemento e Molecula. A classe Elemento representa um elemento químico, contendo atributos como o símbolo do elemento, seu número atômico, categoria, ano de descoberta e seu peso atômico. Já a classe Molecula recebe uma relação de elementos químicos e suas quantidades, sendo capaz de exibir o peso atômico da molécula criada, o "circulo magico" da molecula, o ano do atomo mais antigo e gerar uma fórmula química para a mesma.
+O repositório está dividido em duas partes:
+- O "notebook oficial", contendo a contextualização dos datasets e dos objetivos do presente trabalho, além do tratamento dos datasets. Ademais, há o desenvolvimento e otimização de uma rede neural para previsão da dureza de materiais dado as informações das features junto aos resultados da aplicação da rede neural no dataset de teste e as conclusões deduzidas a partir desses resultados.
+  
+- A *lore* criada funciona como uma história baseada na cultura geek, em especial, em RPGs de fantasia medieval. Toda a lore foi desenvolvida pensando em inspirar o leitor ou pesquisador a se envolver com o problema, permitindo a fácil aplicação da rede neural para uma situação hipotética. [ Esperamos que gostem, fizemos com muito carinho :) ]
 
-- **Grimorio_dos_elementos_obscuros.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN2.jpg:** Imagem de capa do notebook.
-- **Monstrinho 2.ipynb:** Notebook com o codigo e a historia.
+## Objetivo
+O projeto consiste na aplicação e na otimização de hiperparâmetros de uma rede neural do tipo MLP para prever a dureza, na escala de Mohs, de minerais a partir de 11 features inerentes a cada material. A partir dos resultados da predição, analisar a eficácia de redes neurais MLP para predição de dureza de minerais com estruturas cristalinas distintas e explorar as variações para cada tipo de estrutura cristalina, considerando as amostragens utilizadas.
+Vale ressaltar que não faz parte do escopo do projeto se aprofundar nos aspectos técnicos, sendo necessário, para isso, a leitura das referências bibliográficas.
 
-### MN3
-Resumo
+# Metodologia
+Para alcançar o objetivo do trabalho de forma plena, foi realizado uma série de etapas: 
 
-### MN4
-O objetivo deste código é criar classes em Python para representar diferentes personagens de um jogo, como Mago, Tank, Guerreiro e Curandeiro, cada um com habilidades especiais únicas. Além disso, é implementada a classe Item para representar os itens que os personagens podem possuir. 
+- Primeiro, a manipulação dos dados partindo da transformação dos dados de csv para o formato dataframe de tratamento para os datasets junto ao tratamento dos datasets a partir da exploração dos mesmos, permitindo, assim, filtrar as features necessária e relevantes para previsão da dureza, depois, foi feita a segmentação dos dois datasets em treino e teste junto a normalização de dados. 
+- Após a etapa de manipulação, foi construída uma rede neural MLP do tipo regressora, logo depois, fez-se a otimização dos hiperparâmetros usando SGD do próprio PyTorch, ademais, foi feito o treinamento aprimorando a perda através da aplicação de 100 arquiteturas de rede distintas. 
+- Por fim, aplicou-se a rede neural treinada no dataset de teste e computou-se diversas métricas de erros para análise da precisão da rede neural para os diferentes tipos de estrutura cristalina.
 
-Foram utilizados métodos dunder (double underscore methods, ou métodos especiais) para realizar operações especiais em objetos dessas classes, como comparação, adição e subtração de itens, iteração sobre o inventário de um personagem e definição de comportamento de entrada e saída de um contexto.
+# Tecnologias/Técnicas
+## Linguagem
+- Python
+## Biblitecas
+- Pytorch
+- Numpy
+- Matplotlib
+- Pandas
+- ScikitLearn
+## Plataforma de computação
+- Jupyter Notebook
 
-Dentre os métodos dunder utilizados, destacam-se `__init__` para inicialização de objetos, `__str__` e `__repr__` para representação em string e formal dos objetos, `__eq__` para comparação de igualdade entre objetos, `__lt__` para comparação de ordem, `__add__` e `__sub__` para adição e subtração de valores, `__contains__` para verificação de presença de itens, `__iter__` e `__next__` para iteração sobre o inventário, e `__enter__` e `__exit__` para definição de comportamento de entrada e saída de um contexto.
+# Organização
+O Repositório está dividido em 4 partes:
 
-Como exemplo, a classe `Personagem` representa um personagem genérico do jogo, com métodos para entrada e saída do campo de batalha, adição e subtração de pontos de vida, e iteração sobre o inventário. Cada classe de personagem específica, como `Mago`, `Tank`, `Guerreiro`, `Curandeiro`, possui uma habilidade especial que pode ser utilizada durante o jogo.
+- Readme -> Guia do projeto. Incluindo a motivação, origem, fontes e organização do github.
+- Datasets -> Pasta com os dois arquivos referentes ao dataset de treino e de validação, os arquivos estão disponibilizados no formato *.csv*
+- Notebooks -> Essa pasta consiste em dois arquivos com a extensão *.ipynb*. Incluindo o notebook com o desenvolvimento da *lore*. Além do notebook com a aplicação da rede neural otmizada para predição junto ao detalhamento do processo de raciocínio e explicação dos códigos passo a passo em norma culta científica.
+- Imagens -> Pasta com as imagens utilizadas para ilustração da narrativa do notebook referente a lore.
 
-Uma classe adicional, `Guerreiro_sem_alma`, foi criada como uma variação do Guerreiro, com uma habilidade especial única.
+## Lore
+O notebook da lore foi desenvolvido com muita atenção para uma imersão semelhante a uma novel de fantasia medieval com dragões e magia. Todas as imagens utilizadas para ilustração foram feitas por IA, permitindo o uso irrestrito das ilustrações, em relação a história, o desenvolvimento por inteiro é original e se encaixa de maneira suave aos tópicos apresentados no notebook do código e das explicações em si. É recomendado que a leitura da lore seja feita antes da leitura do outro notebook, porém a leitura da lore não é obrigatória para o entendimento do desenvolvimento da exploração dos datasets e da predição pela rede neural.
 
-- **Guerreiro_sem_alma.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN4.jpg:** Imagem de capa do notebook.
-- **Monstrinho 4.ipynb:** Notebook com o codigo e a historia.
+## Código
+O notebook com o código possui a estrutura inspirada em publicações científicas, unindo formalidade com uma leitura fluída e de fácil entendimento(assim esperamos). É de suma importância que os textos sejam lidos na ordem e ao decorrer da elaboração dos códigos e dos resultados para que haja um entendimento correto e completo da proposta, do raciocínio e dos resultados. No conteúdo em si, há a introdução aos principais tópicos em relação aos minerais junto as suas features e ao conceito de dureza(alvo principal da predição), além dos códicos com as explicações necessárias, e, por fim, os resultados das predições e as conclusões dos autores. Caso ocorra dúvidas ou haja o desejo de aprofundamento, todas as referências utilizadas estão presentes aqui no Readme e ao fim do notebook.
 
-### MN5
-O objetivo deste código é implementar um regularizador Dropout em uma rede neural simples utilizando Python puro. A classe `NeuralNetwork` representa a rede neural, que possui uma camada oculta e uma camada de saída.
+# Datasets
+Os dados extraídos consiste em dois databases de minerais, uma para treino com 622 minerais e outro para teste com 51 minerais. Ambos os dataset possuem um total de 11 descrições atômicas de cada mineral, ou seja, 11 features e a dureza como target.
+*Features*
+- Número de elétrons
+- Número de elétrons de valência
+- Número atômico
+- Eletronegativa de Pauling
+- Eletronegatividade do estado de oxidação mais comum
+- Raios atômicos covalentes
+- Raio de Vander Waals
+- Energia de ionização do neutro
+- Média de todos os elétrons
+- Densidade média
+- Peso atômico
+  
+Entretanto, o dataset de teste possui duas colunas a mais. A primeira corresponde a fórmula molecular do mineral e a segunda ao tipo de estrutura ceistalina.
 
-O método `forward` realiza a propagação direta dos dados pela rede, aplicando a função de ativação sigmoid na camada oculta e na camada de saída. Durante o treinamento, o Dropout é aplicado à camada oculta para evitar o overfitting. O método `backward` realiza a retropropagação para ajustar os pesos da rede com base no erro calculado.
+## Dataset de Treino
+O Dataset de treino é composto por 622 minerais com composições únicas obtidos por permutações composicionais de uma base de dados com 369 minerais únicos retirados do *Physical and Optical Properties of Minerals CRC Handbook of Chemestry and Physics* e da *American Mineralogist Crystal Structure Database* . Os minerais presentes do dataset possuem estruturas critalinas diversas como já foi mencionado, sendo: 
 
-A função `train` é responsável por treinar a rede neural usando os dados fornecidos, realizando várias épocas de treinamento e ajustando os pesos com base na taxa de aprendizagem especificada. Por fim, o método `predict` é utilizado para realizar previsões com base nos dados de entrada.
+- 210 de estrutura monoclínica;
+- 96 de estrutura romboédrica;
+- 89 de estrutura hexagonal;
+- 80 de estrutura tetragonal;
+- 73 de estrutura cúbica;
+- 50 de estrutura ortorrômbica;
+- 22 de estrutura triclínica;
+- 1 de estrutura trigonal;
+- 1 de estrutura amorfa.
 
-A implementação do Dropout na camada oculta é realizada através da aplicação de uma máscara binomial durante o treinamento, onde os neurônios são "desligados" com uma probabilidade especificada, ajudando a evitar o overfitting e melhorando a generalização do modelo.
+## Dataset de Teste
+O dataset de teste é composto por 51 cristais sintéticos singulares retirados da literatura, sendo a distribuição das estruturas cristalinas:
 
-- **General_Zumbi.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN5.jpg:** Imagem de capa do notebook.
-- **Monstrinho 5.ipynb:** Notebook com o codigo e a historia.
+- 15 de estrutura monoclínica;
+- 7 de estrutura tetragonal;
+- 7 de estrutura hexagonal;
+- 6 de estrutura ortorrômbicas;
+- 4 de estrutura cúbica;
+- 3 de estrutura romboédrica.
+  
+# Referências
+## Datasets
+[1] Dumlao, J. (2024). Prediction of Mohs Hardness with Machine Learning. Kaggle. Retirado de https://www.kaggle.com/datasets/jocelyndumlao/prediction-of-mohs-hardness-with-machine-learning/data
 
-### MN6
-O objetivo deste código é implementar três novas funções de ativação em uma rede neural feita em Python puro, além da função sigmoidal já implementada. As novas funções de ativação são: ReLU (Rectified Linear Unit), Tangente Hiperbólica (Tanh), Swish, ELU (Exponential Linear Unit) e Softplus.
+[2] Garnett, J. C. (2022). Dataset for Mohs Hardness Prediction. Mendeley Data. DOI: 10.17632/jm79zfps6b.1. retirado de https://data.mendeley.com/datasets/jm79zfps6b/1
 
-A função ReLU é uma função de ativação muito comum em redes neurais profundas devido à sua simplicidade e eficácia. Ela mapeia os valores de entrada para zero quando são negativos e mantém os valores positivos inalterados. A Tangente Hiperbólica (Tanh) é uma função de ativação que mapeia os valores de entrada para o intervalo entre -1 e 1, proporcionando uma alternativa à função sigmoidal que apresenta um gradiente mais forte. Já a Softplus é uma função de ativação que produz uma saída suave e contínua, aproximando-se da identidade para entradas positivas e se aproximando de zero para entradas negativas.
+## Literatura 
+[1] TABOR, David. Mohs's hardness scale-a physical interpretation. Proceedings of the Physical Society. Section B, v. 67, n. 3, p. 249, 1954.
 
-A função Swish é uma função de ativação proposta recentemente que usa a função sigmoidal em uma forma modulada. Ela é considerada uma alternativa à ReLU, apresentando uma saída mais suave e contínua.
+[2] Cassar, Daniel(2024). ATP-303 NN 1.1 - Introdução.pdf. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-Já a função ELU é outra função de ativação que, assim como a ReLU, é uma alternativa à função sigmoidal. ELU é uma função definida para valores positivos e negativos e é mais suave do que a ReLU, permitindo treinamento mais rápido de redes neurais profundas e uma melhor generalização.
+[3] Cassar, Daniel(2024). ATP-303 NN 1.2 - Redes neurais.pdf. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-Cada função de ativação implementada possui também o método para calcular a derivada da função, que é essencial para a retropropagação do erro durante o treinamento da rede neural. Essas funções de ativação oferecem diferentes comportamentos não-lineares que podem ser úteis em diferentes tipos de problemas e arquiteturas de rede neural.
+[4] Cassar, Daniel(2024). ATP-303 NN 1.3 - Regra da cadeia.pdf. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-Essas funções de ativação adicionais proporcionam uma variedade de opções para a construção de arquiteturas de rede neural e podem ser exploradas de acordo com as necessidades específicas de cada aplicação.
+[5] Cassar, Daniel(2024). ATP-303 NN 1.4 - Backpropagation.pdf. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-- **Golem_de_carne.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN6.jpg:** Imagem de capa do notebook.
-- **Monstrinho 6.ipynb:** Notebook com o codigo e a historia.
+[6] Cassar, Daniel(2024). ATP-303 NN 3.2 - Notebook Autograd.ipynb. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-### MN7
-Neste código, a classe `NeuralNetwork`, usada nos notebooks anteriores, foi modificada para funcionar como um classificador multiclasse em vez de uma rede neural classificadora binaria. As principais alterações incluem:
+[7] Cassar, Daniel(2024). ATP-303 NN 4.2 - Notebook MLP.ipynb. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-1. **Função de Ativação Softmax:** Em vez de usar a função de ativação sigmoid para a camada de saída, foi implementada a função de ativação softmax, que é mais adequada para problemas de classificação multiclasse. A função softmax converte as saídas da rede em uma distribuição de probabilidade sobre as classes.
+[8] Cassar, Daniel(2024). ATP-303 NN 5.2 - Notebook PyTorch.ipynb. Retirado do repositório da matéria Redes Neurais e Algoritimos Genéticos da ILUM - Escola de Ciência.
 
-2. **Função de Perda Cross-Entropy:** Para problemas de classificação multiclasse, a função de perda mais comumente usada é a entropia cruzada (cross-entropy loss), que é mais apropriada do que a função de perda baseada em resíduos quadrados usada em problemas de regressão.
+## Bibliotecas
+[1] PyTorch. (2024). PyTorch: Tensors and Dynamic neural networks in Python with strong GPU acceleration. Retirado de https://pytorch.org/.
 
-3. **Ajustes na Retropropagação:** Na retropropagação, a forma como o erro é propagado de volta para a camada oculta foi ajustada para se adequar à função de ativação softmax na camada de saída.
+[2] PyTorch. (2024). torch.nn - PyTorch v1.10.1 documentation. Retirado de https://pytorch.org/docs/1.10.1/nn.html.
 
-4. **Saída de Predição:** A saída da função `forward` foi modificada para retornar as probabilidades previstas para cada classe em vez dos valores reais.
+[3] PyTorch. (2024). torch.optim - PyTorch v1.10.1 documentation. Retirado de https://pytorch.org/docs/1.10.1/optim.html.
 
-Essas alterações permitem que a rede neural seja treinada e usada para classificar dados em várias classes. Para treinar a rede, os rótulos esperados (`y`) devem ser codificados no formato one-hot, onde cada classe é representada como um vetor binário com um valor de 1 na posição correspondente à classe e valores de 0 em todas as outras posições.
+[4] Pandas. (2010). pandas documentation. Retirado de https://pandas.pydata.org/docs/.
 
-- **Mumia_da_Tempestade.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN7.jpg:** Imagem de capa do notebook.
-- **Monstrinho 7.ipynb:** Notebook com o codigo e a historia.
+[5] Scikit-learn. (2011). scikit-learn preprocessing module documentation. Retirado de https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing.
 
-### MN8
-Resumo
+[6] Scikit-learn. (2011). scikit-learn metrics module documentation. Retirado de https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.
 
-### MN9
-Nesse notebook está a implementação da função `mc_dropout_prediction` para calcular a incerteza de previsão usando a estratégia de Monte Carlo Dropout. Essa função realiza várias previsões com a rede neural usando o dropout durante o teste e retorna a média e o desvio padrão das previsões para cada classe.
+[7] Matplotlib. (2007). matplotlib.pyplot documentation. Retirado de https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html.
 
-A ideia por trás do Monte Carlo Dropout é que, durante o teste, o dropout é aplicado à rede neural várias vezes, gerando diferentes previsões para os mesmos dados de entrada. Em seguida, a média dessas previsões é calculada como a previsão final, e o desvio padrão é usado como uma medida de incerteza.
+[8] NumPy. (2020). NumPy v1.22.0 documentation. Retirado de https://numpy.org/doc/stable/.
 
-Essa abordagem permite que a rede neural forneça não apenas uma previsão única, mas também uma estimativa de quão confiante ela está em sua previsão. Isso é útil em situações em que é importante conhecer a incerteza associada à previsão, como em sistemas de tomada de decisão automatizados ou em tarefas de classificação onde as classes são desbalanceadas.
 
-- **Ceifador_de_almas.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN9.jpg:** Imagem de capa do notebook.
-- **Monstrinho 9.ipynb:** Notebook com o codigo e a historia.
 
-### MN10
-Nesse notebook está a implementação de uma rede neural com uma camada oculta e otimizador de Descida do Gradiente com Momento. O otimizador de Descida do Gradiente com Momento ajuda a acelerar o processo de aprendizado, permitindo que o modelo se mova mais rapidamente na direção certa e reduzindo oscilações desnecessárias.
 
-Este otimizador utiliza o conceito de momento, que é uma média móvel exponencial dos gradientes anteriores. Isso permite que o otimizador acumule momento na direção consistente do gradiente, o que ajuda a "suavizar" o processo de atualização dos pesos.
 
-Durante o treinamento, os momentos para os pesos e vieses são atualizados a cada passo de retropropagação, e os pesos e vieses são atualizados usando esses momentos.
 
-Essa implementação permite treinar a rede neural usando o otimizador de Descida do Gradiente com Momento, o que pode resultar em um aprendizado mais rápido e estável.
-
-- **Drake_Zumbi.jpg:** Imagem ilustrativa do monstro presente no notebook.
-- **MN10.jpg:** Imagem de capa do notebook.
-- **Monstrinho 10.ipynb:** Notebook com o codigo e a historia.
-
-### MN11
-Resumo
-
-## Algoritmos Genéticos
