@@ -2,12 +2,12 @@
 *DreamCoders* - Samuel Soares de Araújo e Eric Leandro Lima Mendoça.
 
 # INTRODUÇÃO
-Repositório do Projeto Final de Redes Neurais da disciplina de *Redes Neurais e Algoritimos Genéticos*. A disciplina faz parte da grade curricular do 3º semestre da ILUM - Escola de Ciência, sendo administrada pelo Professor Daniel Cassar. 
+Repositório do Projeto Final de Algoritmos Genéticos da disciplina de *Redes Neurais e Algoritmos Genéticos*. A disciplina faz parte da grade curricular do 3º semestre da ILUM - Escola de Ciência, sendo administrada pelo Professor Daniel Cassar. 
 
 O repositório está dividido em duas partes:
-- O "notebook oficial", contendo a contextualização dos datasets e dos objetivos do presente trabalho, além do tratamento dos datasets. Ademais, há o desenvolvimento e otimização de uma rede neural para previsão da dureza de materiais dado as informações das features junto aos resultados da aplicação da rede neural no dataset de teste e as conclusões deduzidas a partir desses resultados.
+- O "notebook oficial", contendo a contextualização dos datasets e dos objetivos do presente trabalho, além do tratamento dos datasets. Ademais, há a criação, desenvolvimento e resultado das populações produzidas pelo algoritmo genético junto a uma comparação com os dados originais do dataset considerando as pontuações da função objetivo e a distância de Manhattan da população final em relação as features/propriedades reais.
   
-- A *lore* criada funciona como uma história baseada na cultura geek, em especial, em RPGs de fantasia medieval. Toda a lore foi desenvolvida pensando em inspirar o leitor ou pesquisador a se envolver com o problema, permitindo a fácil aplicação da rede neural para uma situação hipotética. [ Esperamos que gostem, fizemos com muito carinho :) ]
+- A *lore* criada funciona como uma história baseada na cultura geek, em especial, em RPGs de fantasia medieval. Toda a lore foi desenvolvida pensando em inspirar o leitor ou pesquisador a se envolver com o problema, permitindo o fácil entendimento para uma situação hipotética. [ Esperamos que gostem, fizemos com muito carinho :) ]
 
 ## Objetivo
 O projeto consiste na aplicação e na otimização de hiperparâmetros de uma rede neural do tipo MLP para prever a dureza, na escala de Mohs, de minerais a partir de 11 features inerentes a cada material. A partir dos resultados da predição, analisar a eficácia de redes neurais MLP para predição de dureza de minerais com estruturas cristalinas distintas e explorar as variações para cada tipo de estrutura cristalina, considerando as amostragens utilizadas.
