@@ -28,30 +28,30 @@ Para alcançar o objetivo do trabalho de forma plena, foi realizado uma série d
 ## Linguagem
 - Python
 ## Biblitecas
-- Pytorch
-- Numpy
-- Matplotlib
+- Statistics
 - Pandas
-- ScikitLearn
+- Random
 ## Plataforma de computação
 - Jupyter Notebook
 
 # Organização
 O Repositório está dividido em 4 partes:
 
-- Readme -> Guia do projeto. Incluindo a motivação, origem, fontes e organização do github.
-- Datasets -> Pasta com os dois arquivos referentes ao dataset de treino e de validação, os arquivos estão disponibilizados no formato *.csv*
-- Notebooks -> Essa pasta consiste em dois arquivos com a extensão *.ipynb*. Incluindo o notebook com o desenvolvimento da *lore*. Além do notebook com a aplicação da rede neural otmizada para predição junto ao detalhamento do processo de raciocínio e explicação dos códigos passo a passo em norma culta científica.
-- Imagens -> Pasta com as imagens utilizadas para ilustração da narrativa do notebook referente a lore.
+- Readme -> Guia do projeto. Incluindo a motivação, origem, fontes e organização do github;
+- Datasets -> Pasta com o arquivo referente ao dataset base com as ligas reais, o arquivo está disponibilizado no formato *.csv*;
+- Notebooks -> Essa pasta consiste em dois arquivos com a extensão *.ipynb*. Incluindo o notebook com o desenvolvimento da *lore*. Além do notebook com a aplicação do algoritmo genético para suposição de ligas ótimas junto ao detalhamento do processo de raciocínio e explicação dos códigos passo a passo;
+- Imagens -> Pasta com as imagens utilizadas para ilustração da narrativa do notebook referente a lore;
 
 ## Lore
-O notebook da lore foi desenvolvido com muita atenção para uma imersão semelhante a uma novel de fantasia medieval com dragões e magia. Todas as imagens utilizadas para ilustração foram feitas por IA, permitindo o uso irrestrito das ilustrações, em relação a história, o desenvolvimento por inteiro é original e se encaixa de maneira suave aos tópicos apresentados no notebook do código e das explicações em si. É recomendado que a leitura da lore seja feita antes da leitura do outro notebook, porém a leitura da lore não é obrigatória para o entendimento do desenvolvimento da exploração dos datasets e da predição pela rede neural.
+O notebook da lore foi desenvolvido com muita atenção para uma imersão semelhante a uma novel de fantasia medieval com anões e magia. Todas as imagens utilizadas para ilustração foram feitas por IA, permitindo o uso irrestrito das ilustrações. Em relação a história, o desenvolvimento por inteiro é original e se encaixa de maneira suave aos tópicos apresentados no notebook do código e das explicações em si. É recomendado que a leitura da lore seja feita antes da leitura do outro notebook, porém a leitura da lore não é obrigatória para o entendimento do desenvolvimento da exploração dos datasets e do algoritmo genético.
 
 ## Código
-O notebook com o código possui a estrutura inspirada em publicações científicas, unindo formalidade com uma leitura fluída e de fácil entendimento(assim esperamos). É de suma importância que os textos sejam lidos na ordem e ao decorrer da elaboração dos códigos e dos resultados para que haja um entendimento correto e completo da proposta, do raciocínio e dos resultados. No conteúdo em si, há a introdução aos principais tópicos em relação aos minerais junto as suas features e ao conceito de dureza(alvo principal da predição), além dos códicos com as explicações necessárias, e, por fim, os resultados das predições e as conclusões dos autores. Caso ocorra dúvidas ou haja o desejo de aprofundamento, todas as referências utilizadas estão presentes aqui no Readme e ao fim do notebook.
+O notebook com o código possui a estrutura inspirada em publicações científicas, unindo formalidade com uma leitura fluída e de fácil entendimento(assim esperamos). É de suma importância que os textos sejam lidos na ordem e ao decorrer da elaboração dos códigos e dos resultados para que haja um entendimento correto e completo da proposta, do raciocínio e dos resultados. No conteúdo em si, há a introdução aos principais tópicos em relação as ligas metálica junto as suas features e ao conceito de resistência(definido pelos autores), além dos códigos com as explicações necessárias, e, por fim, os resultados das ligas criadas e as conclusões dos autores. 
+
+Caso ocorra dúvidas ou haja o desejo de aprofundamento, todas as referências utilizadas estão presentes aqui no Readme e ao fim do notebook.
 
 # Datasets
-Os dados extraídos consiste em dois databases de minerais, uma para treino com 622 minerais e outro para teste com 51 minerais. Ambos os dataset possuem um total de 11 descrições atômicas de cada mineral, ou seja, 11 features e a dureza como target.
+
 *Features*
 - Número de elétrons
 - Número de elétrons de valência
@@ -66,29 +66,6 @@ Os dados extraídos consiste em dois databases de minerais, uma para treino com 
 - Peso atômico
   
 Entretanto, o dataset de teste possui duas colunas a mais. A primeira corresponde a fórmula molecular do mineral e a segunda ao tipo de estrutura ceistalina.
-
-## Dataset de Treino
-O Dataset de treino é composto por 622 minerais com composições únicas obtidos por permutações composicionais de uma base de dados com 369 minerais únicos retirados do *Physical and Optical Properties of Minerals CRC Handbook of Chemestry and Physics* e da *American Mineralogist Crystal Structure Database* . Os minerais presentes do dataset possuem estruturas critalinas diversas como já foi mencionado, sendo: 
-
-- 210 de estrutura monoclínica;
-- 96 de estrutura romboédrica;
-- 89 de estrutura hexagonal;
-- 80 de estrutura tetragonal;
-- 73 de estrutura cúbica;
-- 50 de estrutura ortorrômbica;
-- 22 de estrutura triclínica;
-- 1 de estrutura trigonal;
-- 1 de estrutura amorfa.
-
-## Dataset de Teste
-O dataset de teste é composto por 51 cristais sintéticos singulares retirados da literatura, sendo a distribuição das estruturas cristalinas:
-
-- 15 de estrutura monoclínica;
-- 7 de estrutura tetragonal;
-- 7 de estrutura hexagonal;
-- 6 de estrutura ortorrômbicas;
-- 4 de estrutura cúbica;
-- 3 de estrutura romboédrica.
   
 # Referências
 ## Datasets
