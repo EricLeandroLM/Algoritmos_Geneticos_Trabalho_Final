@@ -10,8 +10,7 @@ O repositório está dividido em duas partes:
 - A *lore* criada funciona como uma história baseada na cultura geek, em especial, em RPGs de fantasia medieval. Toda a lore foi desenvolvida pensando em inspirar o leitor ou pesquisador a se envolver com o problema, permitindo o fácil entendimento para uma situação hipotética. [ Esperamos que gostem, fizemos com muito carinho :) ]
 
 ## Objetivo
-O projeto consiste na aplicação de um algoritmo genético para criação de possíveis materiais com alta *resistência* e baixa densidade. Para isso, foi criado uma função objetivo que levasse em conta as propriedades ligadas a *resistência* e a densidade para pontuar o quão bom é o material. Com o intuito de validar se os materiais da população final possuem propriedades semelhantes, por meio do cálculo da distância de Manhattan, aos materiais reais do dataset base.
-Vale ressaltar que não faz parte do escopo do projeto se aprofundar nos aspectos técnicos, sendo necessário, para isso, a leitura das referências bibliográficas.
+O projeto consiste na aplicação de um algoritmo genético para criação de possíveis materiais com alta resistência e baixa densidade para confecção de uma armadura. Para isso, foi criado uma função objetivo que levasse em conta as propriedades ligadas a resistência e a densidade para pontuar o quão bom é o material. Com o intuito de validar se os materiais da população final possuem propriedades semelhantes, por meio do cálculo da distância de Manhattan, aos materiais reais do dataset base. Vale ressaltar que não faz parte do escopo do projeto se aprofundar nos aspectos técnicos, sendo necessário, para isso, a leitura das referências bibliográficas.
 
 # Metodologia
 Para alcançar o objetivo do trabalho de forma plena, foi realizado uma série de etapas: 
