@@ -10,15 +10,19 @@ O repositório está dividido em duas partes:
 - A *lore* criada funciona como uma história baseada na cultura geek, em especial, em RPGs de fantasia medieval. Toda a lore foi desenvolvida pensando em inspirar o leitor ou pesquisador a se envolver com o problema, permitindo o fácil entendimento para uma situação hipotética. [ Esperamos que gostem, fizemos com muito carinho :) ]
 
 ## Objetivo
-O projeto consiste na aplicação e na otimização de hiperparâmetros de uma rede neural do tipo MLP para prever a dureza, na escala de Mohs, de minerais a partir de 11 features inerentes a cada material. A partir dos resultados da predição, analisar a eficácia de redes neurais MLP para predição de dureza de minerais com estruturas cristalinas distintas e explorar as variações para cada tipo de estrutura cristalina, considerando as amostragens utilizadas.
+O projeto consiste na aplicação de um algoritmo genético para criação de possíveis ligas metálicas com alta *resistência* e baixa densidade. Para isso, foi criado uma função objetivo que levasse em conta as propriedades ligadas a *resistência* e a densidade para pontuar o quão bom é o material. Com o intuito de validar se o materiais da população final possuem propriedades semelhantes, por meio do cálculo dad istância de Manhattan, aos materiais reais do dataset base.
 Vale ressaltar que não faz parte do escopo do projeto se aprofundar nos aspectos técnicos, sendo necessário, para isso, a leitura das referências bibliográficas.
 
 # Metodologia
 Para alcançar o objetivo do trabalho de forma plena, foi realizado uma série de etapas: 
 
-- Primeiro, a manipulação dos dados partindo da transformação dos dados de csv para o formato dataframe de tratamento para os datasets junto ao tratamento dos datasets a partir da exploração dos mesmos, permitindo, assim, filtrar as features necessária e relevantes para previsão da dureza, depois, foi feita a segmentação dos dois datasets em treino e teste junto a normalização de dados. 
-- Após a etapa de manipulação, foi construída uma rede neural MLP do tipo regressora, logo depois, fez-se a otimização dos hiperparâmetros usando SGD do próprio PyTorch, ademais, foi feito o treinamento aprimorando a perda através da aplicação de 100 arquiteturas de rede distintas. 
-- Por fim, aplicou-se a rede neural treinada no dataset de teste e computou-se diversas métricas de erros para análise da precisão da rede neural para os diferentes tipos de estrutura cristalina.
+- Primeiro, a manipulação dos dados partindo da transformação dos dados de csv para o formato dataframe seguido do tratamento desses dataframes a partir da exploração dos mesmos, permitindo, assim, filtrar as features relevantes para a função objetivo;
+- Depois, foi criada uma função objetivo com as features relevantes e os pesos dela foram determinados de forma arbitrária com base na influência de cada propriedade;
+- Ainda em relação as definições, definimos o tamanho da população, número de gerações, taxa de cruzamento e taxa de mutação;
+- Após a criação da função objetivo, foi criada uma população inicial artificial, levando em conta os máximos e minímos de cada propriedade nas ligas do dataset e com um filtro para não criação de indivíduos com uma pontuação melhor que a melhor liga metálica do dataset original, assim, evitando materiais instáveis;
+- No uso dos operadores, foram feitas alterações na mutação sucessiva e no cruzamento para que não houvesse a criação de indivíduos com uma pontuação na função objetivo melhor que a melhor das ligas metálicas do dataset base, dessa forma, evitando a criação de "super ligas" inviáveis;
+- Após a criação do algoritmo, aplicamos ele para a criação de uma população com possíveis candidatos a ligas ótimas estáveis.
+- Por fim, para filtrar as ligas realmente viáveis, foi calculado a distância Manhattan entre cada indivíduo da população final em relação as ligas reais do dataset base.
 
 # Tecnologias/Técnicas
 ## Linguagem
